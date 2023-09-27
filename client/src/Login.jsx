@@ -49,9 +49,9 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="submit" className="btn btn-success w-100 rounded-0">
+        <Link to='/home' type="submit" className="btn btn-success w-100 rounded-0">
           Login
-        </button>
+        </Link>
         <p className="mt-3 text-center">
           Don't have an account?{" "}
           <Link
