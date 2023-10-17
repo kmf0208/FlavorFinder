@@ -1,7 +1,11 @@
+import OpenAI from "openai";
+
+const openai = new OpenAI();
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const EmployeeModel = require('./models/Employee')
+
 
 
 const app = express()
@@ -33,6 +37,27 @@ app.post('/register', (req, res) => {
     .then(employees => res.json(employees))
     .catch(err => res.json(err))
 })
+
+// app.post('/api/generate-recipe', (req, res) => {
+//     fetch('https://api.openai.com/v1/engines/davinci-codex/completions', {
+//     method: 'POST',
+//     headers: {
+//         'Content-Type': 'application/json',
+//         'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
+//     },
+//     body: JSON.stringify({
+//         prompt: req.body.prompt,
+//         max_tokens: 60
+//     })
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         res.json(data);
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
+//     });
+// })
 
 
 app.listen(3001, ()=>{
