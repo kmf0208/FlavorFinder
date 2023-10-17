@@ -57,6 +57,7 @@ function Signup() {
                 <strong>Password</strong>
               </label>
               <input
+              id="password_input"
                 type="password"
                 placeholder="Enter Password"
                 name="password"
