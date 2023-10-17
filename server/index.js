@@ -38,6 +38,7 @@ app.post('/register', (req, res) => {
     .catch(err => res.json(err))
 })
 
+// code to send request to openai api
 // app.post('/api/generate-recipe', (req, res) => {
 //     fetch('https://api.openai.com/v1/engines/davinci-codex/completions', {
 //     method: 'POST',
