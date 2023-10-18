@@ -28,8 +28,9 @@ function Signup() {
           <h1 id="registration">Register</h1>
           <form className="register_form" onSubmit={handleSubmit}>
             <div className="mb-3">
-              <label id="name_title" htmlFor="name">
-                <strong>Name</strong>
+              <label id="name_title" htmlFor="name" >
+              <img src="src/styling/images/user.jpg" className="image_icons" alt="Girl in a jacket" width="24" height="24"/>
+                <bold >Name</bold>
               </label>
               <input
               id="name_input"
@@ -43,7 +44,8 @@ function Signup() {
             </div>
             <div className="mb-3">
               <label id="email_title" htmlFor="email">
-                <strong>Email</strong>
+              <img src="src/styling/images/letter.jpg" className="image_icons" alt="email" width="24" height="24"/>
+                <bold>Email</bold>
               </label>
               <input
               id="email_input"
@@ -56,7 +58,8 @@ function Signup() {
             </div>
             <div className="mb-3">
               <label id="password_title" htmlFor="password">
-                <strong>Password</strong>
+              <img src="src/styling/images/password.jpg" className="image_icons" alt="Girl in a jacket" width="24" height="24"/>
+                <bold>Password</bold>
               </label>
               <input
               id="password_input"
