@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
-import './styling/register_login.css'
+import './styling/register.css'
 
 function Signup() {
     const [name, setName] = useState()
@@ -25,13 +25,14 @@ function Signup() {
   return (
       <div className="inner_background" >
         <div className="text_color">
-          <h2 id="registration">Register</h2>
+          <h1 id="registration">Register</h1>
           <form className="register_form" onSubmit={handleSubmit}>
             <div className="mb-3">
-              <label htmlFor="name">
+              <label id="name_title" htmlFor="name">
                 <strong>Name</strong>
               </label>
               <input
+              id="name_input"
                 type="text"
                 placeholder="Enter Name"
                 autoComplete="off"
@@ -41,10 +42,11 @@ function Signup() {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="email">
+              <label id="email_title" htmlFor="email">
                 <strong>Email</strong>
               </label>
               <input
+              id="email_input"
                 type="email"
                 placeholder="Enter Email"
                 autoComplete="off"
@@ -53,7 +55,7 @@ function Signup() {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="password">
+              <label id="password_title" htmlFor="password">
                 <strong>Password</strong>
               </label>
               <input

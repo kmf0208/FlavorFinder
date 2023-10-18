@@ -1,0 +1,60 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.inner_background{
+    display: flex;
+    background-color: #fcf0e2;
+    margin-top: 100px;  
+    width: 530px;
+    height: 550px; 
+    padding-top: 70px;
+    border-radius: 20px;
+    text-align: center;
+    font-family: "Times New Roman";
+    font-size: 20px;
+    
+}
+
+
+
+.mb-3{
+    width: 550px;
+    padding: 30px 5px;
+    display: flex;
+    justify-content: center;
+}
+
+#password_input, #name_input, #email_input {
+    margin-right: 30px;
+    width: 175px;
+    padding-right: 100px;
+}
+
+#password_input {
+    /* width: 175px;
+    margin-left: 40px; */
+    /* display: flex;
+    justify-content: center; */
+
+}
+
+#password_title {
+    padding-right: 75px;
+    /* display: flex;
+    justify-content: center; */
+    /* position: absolute;
+    left: 270px; */
+    
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#name_title, #email_title {
+    padding-right: 100px;
+}
+
