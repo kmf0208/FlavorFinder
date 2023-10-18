@@ -1,11 +1,9 @@
-import OpenAI from "openai";
+require('dotenv').config()
 
-const openai = new OpenAI();
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const EmployeeModel = require('./models/Employee')
-
 
 
 const app = express()
@@ -39,28 +37,32 @@ app.post('/register', (req, res) => {
 })
 
 // code to send request to openai api
-// app.post('/api/generate-recipe', (req, res) => {
-//     fetch('https://api.openai.com/v1/engines/davinci-codex/completions', {
-//     method: 'POST',
-//     headers: {
-//         'Content-Type': 'application/json',
-//         'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
-//     },
-//     body: JSON.stringify({
-//         prompt: req.body.prompt,
-//         max_tokens: 60
-//     })
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//         res.json(data);
-//     })
-//     .catch(error => {
-//         console.error('Error:', error);
-//     });
-// })
+app.post('/api/generate-recipe', (req, res) => {
+    fetch('https://api.openai.com/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
+    },
+    body: JSON.stringify({
+        "messages": [{ "role": "system", "content": "Please give me a recipe for a Japanese dinner dish that is easy to make and can be cooked in 30 minutes in the following format: Name of dish: Cooking time: Short description: List of ingredients: Instructions:" }],
+        "model": "gpt-3.5-turbo-16k-0613"
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.choices[0].message.content);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+})
+
+// { "messages": 
+// [{ "role": "system", "content": "Please give me a recipe for a Japanese dinner dish that is easy to make and can be cooked in 30 minutes in the following format: Name of dish: Cooking time: Short description: List of ingredients: Instructions:" }],
+//     "model": "gpt-3.5-turbo"}
 
 
 app.listen(3001, ()=>{
-    console.log('server is runing')
+    console.log('server is running')
 })
