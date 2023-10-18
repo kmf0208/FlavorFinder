@@ -1,20 +1,23 @@
 import React, { useState } from "react";
-import axios from "axios";
 
 const Generator = () => {
-    const [formInput, setformInput] = useState([])
+    const [formInput, setformInput] = useState("")
 
     const handleFormChange = (event) => {
         setformInput(event.target.value)
     }
 
     const handleFormSubmit = (e) => {
-        e.preventDefault();
-        axios
-            .post('http://localhost:3001/api/generate-recipe')
-            .then(result => {
-                console.log(result)
-            })
+        e.preventDefault()
+        fetch('http://localhost:3001/api/generate-recipe', {
+            method: "POST",
+            headers: {'Content-type': 'application/json'},
+            body: JSON.stringify({ prompt: formInput })
+        })
+        .then(response => {
+            console.log(response)
+            setformInput('')
+        })
     }
 
 
